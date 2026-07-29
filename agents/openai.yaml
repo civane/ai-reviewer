@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Reviewer"
+  short_description: "Critically review papers, plan revisions, and re-review rebuttals."
+  default_prompt: "Use $ai-reviewer to critically review this paper, then provide an evidence-linked revision plan and re-review checklist."
