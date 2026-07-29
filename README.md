@@ -16,19 +16,19 @@
 在 Codex 中输入：
 
 ```text
-安装 https://github.com/<你的用户名>/ai-reviewer 中的 ai-reviewer skill
+安装 https://github.com/civane/ai-reviewer 中的 ai-reviewer skill
 ```
 
 也可以让 Codex 使用 Skill Installer：
 
 ```text
-Install the skill from <你的用户名>/ai-reviewer.
+Install the skill from civane/ai-reviewer.
 ```
 
 ### 方式二：手动安装
 
 ```bash
-git clone https://github.com/<你的用户名>/ai-reviewer.git
+git clone https://github.com/civane/ai-reviewer.git
 mkdir -p ~/.codex/skills
 cp -R ai-reviewer ~/.codex/skills/ai-reviewer
 ```
