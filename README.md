@@ -5,8 +5,10 @@
 ## 能做什么
 
 - **Critical Review**：审查创新性、技术正确性、实验/基线、理论、效率、评测有效性、复现与伦理风险。
+- **Pre-submission Hardening**：在投稿前对数学、符号、定理条件、表格口径、实验设置和 claim 边界作对抗式自检。
 - **Revision Plan**：把 reviewer comments 转为“补什么证据、如何修改、如何回应”的优先级工作表。
 - **Re-review**：将原始 concern 与 rebuttal/修订逐条对照，判断 resolved、partial 或 unresolved。
+- **Review Challenge / AC Brief**：对有争议的低分 concern 建立可核验账本，生成克制、供 AC 快速判断的事实摘要。
 - **Public Review Audit**：审计公开 OpenReview 讨论，提炼 reviewer 真正在意的 weakness 与有效回应；不从文风推断是否由 AI 撰写。
 
 ## 安装
@@ -44,6 +46,14 @@ cp -R ai-reviewer ~/.codex/skills/ai-reviewer
 重点检查创新性、实验/基线、理论、复现性和可能被 reviewer 挑的问题。
 ```
 
+### 1.1 投稿前专项加固
+
+```text
+用 ai-reviewer 做 Pre-submission Hardening。对定义、符号、公式、定理假设、
+复杂度、表格、实验设置和 claim scope 建立 hardening ledger；
+把问题分为必须修复、必须澄清、补充证据、主动披露限制。
+```
+
 ### 2. 将 reviewer comments 转为修改计划
 
 ```text
@@ -65,6 +75,14 @@ cp -R ai-reviewer ~/.codex/skills/ai-reviewer
 ```text
 用 ai-reviewer 审计这篇 OpenReview 讨论：总结 reviewer 真正在意的 weakness、
 作者如何回应、哪些回应足以改变评价；不要判断 reviewer 是否使用 AI。
+```
+
+### 5. 对有争议的低分意见建立 AC Brief
+
+```text
+用 ai-reviewer 的 Review Challenge / AC Brief 模式，对照论文、review 和 rebuttal。
+把每条 concern 标为有效、部分有效、证据不足、事实矛盾或超出 stated claim；
+输出可核验的作者回应和一页中立的 AC brief。不要攻击 reviewer，也不要推断其是否使用 AI。
 ```
 
 ## 关键原则
