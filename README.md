@@ -9,6 +9,7 @@
 - **Revision Plan**：把 reviewer comments 转为“补什么证据、如何修改、如何回应”的优先级工作表。
 - **Re-review**：将原始 concern 与 rebuttal/修订逐条对照，判断 resolved、partial 或 unresolved。
 - **Review Challenge / AC Brief**：对有争议的低分 concern 建立可核验账本，生成克制、供 AC 快速判断的事实摘要。
+- **Comparable-paper Audit**：找真正可比的论文，逐项比较其实验设置，并判断当前实验覆盖是否完整。
 - **Public Review Audit**：审计公开 OpenReview 讨论，提炼 reviewer 真正在意的 weakness 与有效回应；不从文风推断是否由 AI 撰写。
 
 ## 安装
@@ -44,6 +45,7 @@ cp -R ai-reviewer ~/.codex/skills/ai-reviewer
 ```text
 Pre-submission Hardening
   → Critical Review
+  → Comparable-paper Audit
   → Revision Plan
   → Rebuttal
   → Re-review
@@ -83,6 +85,18 @@ Pre-submission Hardening
 用 ai-reviewer 的 Revision Plan 模式分析以下 reviewer comments。
 按“必须补实验 / 必须澄清 / 可以收窄 claim / 不值得争辩”排序，
 并给每条写一个可执行 rebuttal。
+```
+
+### 3.1 Comparable-paper Audit：用类似论文检验实验覆盖
+
+**输入：** 当前论文，以及主题、目标会议或候选相关论文（可选）。
+
+**产出：** 3–6 篇可比论文的筛选理由、实验矩阵，以及“公平比较所必需 / 高价值但非必须 / 无法直接比较”的结论；最后列出仍可能成立的实验异议和最小补实验。
+
+```text
+用 ai-reviewer 做 Comparable-paper Audit。为当前论文找 3–6 篇真正可比的论文，
+比较任务、数据、指标、baseline、ablation、鲁棒性、统计报告与计算成本；
+评估实验是否完整，并列出仍可能成立的异议和最小补实验。不要把不同协议的论文强行当作直接 baseline。
 ```
 
 ### 4. Re-review：检查 rebuttal 是否真的解决问题
