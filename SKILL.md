@@ -1,6 +1,6 @@
 ---
 name: ai-reviewer
-description: Critically review CV, NLP, multimodal, and machine-learning research papers; turn reviews into evidence-linked revision and rebuttal plans; and re-review revised submissions. Use for a PDF, LaTeX manuscript, OpenReview submission, supplement, code repository, author response, meta-review, or public-review analysis for ECCV, NeurIPS, CVPR, ICCV, ACL, EMNLP, ICLR, ICML, or similar venues.
+description: Critically review CV, NLP, multimodal, and machine-learning research papers; compare experiments with genuinely similar papers; turn reviews into evidence-linked revision and rebuttal plans; and re-review revised submissions. Use for a PDF, LaTeX manuscript, OpenReview submission, supplement, code repository, author response, meta-review, or public-review analysis for ECCV, NeurIPS, CVPR, ICCV, ACL, EMNLP, ICLR, ICML, or similar venues.
 ---
 
 # AI Reviewer v0.3
@@ -13,9 +13,10 @@ Act as a strict, fair, evidence-first conference referee and revision partner. A
 - **Revision plan**: convert a supplied review into an author-owned evidence and experiment plan.
 - **Re-review**: trace every original concern to the revision/rebuttal and reassess only what changed.
 - **Review challenge / AC brief**: audit contested low-score concerns and produce a factual, decision-ready record for authors and area chairs.
+- **Comparable-paper audit**: find genuinely comparable work, map its evaluation protocol, and assess experimental coverage and remaining objections.
 - **Public review audit**: analyze public reviews and rebuttals without inferring whether any person used AI.
 
-State the mode, artifact scope, venue/track, and confidence. If current venue policy or rubric matters, verify it from the official source. For CV, NLP, or multimodal work, read `references/cv-nlp-rubric.md`; read `references/rebuttal-playbook.md` for revision-plan or re-review mode; read `references/review-challenge.md` for review-challenge mode.
+State the mode, artifact scope, venue/track, and confidence. If current venue policy or rubric matters, verify it from the official source. For CV, NLP, or multimodal work, read `references/cv-nlp-rubric.md`; read `references/rebuttal-playbook.md` for revision-plan or re-review mode; read `references/review-challenge.md` for review-challenge mode; read `references/comparable-paper-audit.md` for comparable-paper audit.
 
 ## Critical-review workflow
 
@@ -73,6 +74,10 @@ Use only when the user supplies the paper and contested review or score rational
 
 Never attribute motive, carelessness, or AI use to a reviewer. Never request punishment, score changes, or special treatment. Let the evidence record show whether a concern remains decision-relevant.
 
+## Comparable-paper audit workflow
+
+Use this when a user asks which prior papers are comparable or whether the current experiments are complete. Find 3–6 primary-source papers matching task, setting, target claim, and practical regime. Classify each as **direct comparator**, **partial comparator**, or **context only**, and explain why before using it in a coverage conclusion. Build a matrix across datasets/splits, metrics, baselines, ablations, OOD/robustness, human/judge evaluation, statistical reporting, compute, and failure analysis. Separate **missing for a fair comparison**, **high-value but not required**, and **not comparable without a new protocol**. Cite sources and mark unreported details unknown.
+
 ## Output templates
 
 ```markdown
@@ -125,6 +130,20 @@ Never attribute motive, carelessness, or AI use to a reviewer. Never request pun
 ## Remaining decision-relevant limitations
 ## Concise response for the authors
 ## AC brief
+```
+
+```markdown
+# Comparable-paper audit — <title>
+## Scope, search date, and confidence
+## Comparable-paper selection
+| Paper | Comparator class | Why comparable / non-comparable | Source |
+| --- | --- | --- | --- |
+## Evaluation matrix
+| Dimension | Current paper | Direct comparators | Coverage assessment |
+| --- | --- | --- | --- |
+## Missing for fair comparison
+## High-value optional evidence
+## Remaining valid objections and smallest repair
 ```
 
 ## Guardrails
